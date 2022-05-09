@@ -3,7 +3,12 @@ const FactCard = ({ factData }) => {
 
   return (
     <div>
-      <p>{factText}</p>
+      {factText ? (
+        <>
+          <h3>Did you know...</h3>
+          <p>{factText}</p>
+        </>
+      ) : null}
     </div>
   );
 };
