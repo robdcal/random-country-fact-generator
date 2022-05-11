@@ -59,3 +59,14 @@ h3 {
 .hero p {
   margin-bottom: 4rem;
 }
+
+button {
+  width: fit-content;
+  padding: 0.25rem 1rem;
+  margin: 0 auto;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+}
