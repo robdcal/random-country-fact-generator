@@ -5,6 +5,7 @@ import FactCard from "./components/FactCard";
 const App = () => {
   const [countryData, setCountryData] = useState([]);
   const [factData, setFactData] = useState({
+    flags: null,
     factText: null,
   });
 
@@ -23,7 +24,9 @@ const App = () => {
 
   const generateFact = () => {
     const countryNum = Math.floor(Math.random() * countryData.length) + 1;
+    // console.log(countryData);
     setFactData({
+      flag: countryData[countryNum].flags.png,
       factText: `The capital of ${countryData[countryNum].name.common} is ${countryData[countryNum].capital[0]}.`,
     });
   };
@@ -33,8 +36,8 @@ const App = () => {
       <header className="hero">
         <h1>Random Country Fact Generator</h1>
         <button onClick={handleClick}>Generate Fact</button>
-        <FactCard factData={factData} />
       </header>
+      <FactCard factData={factData} />
     </div>
   );
 };
