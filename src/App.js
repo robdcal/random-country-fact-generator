@@ -8,30 +8,25 @@ const App = () => {
     factText: null,
   });
 
-  const handleClick = () => {
-    // console.log("handleClick");
-    setFactData(getFact());
-    // console.log(factData);
-  };
-
-  const getFact = () => {
-    // console.log("getFact");
-    const countryNum = Math.floor(Math.random() * countryData.length) + 1;
-    // console.log(factData);
-    return {
-      factText: `The capital of ${countryData[countryNum].name.common} is ${countryData[countryNum].capital[0]}.`,
-    };
-  };
-
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
       .then((response) => response.json())
       .then((data) => {
         setCountryData(data);
-        // setFactData(getFact());
-        // console.log(factData);
       });
+    // generateFact();
   }, []);
+
+  const handleClick = () => {
+    generateFact();
+  };
+
+  const generateFact = () => {
+    const countryNum = Math.floor(Math.random() * countryData.length) + 1;
+    setFactData({
+      factText: `The capital of ${countryData[countryNum].name.common} is ${countryData[countryNum].capital[0]}.`,
+    });
+  };
 
   return (
     <div className="App">
