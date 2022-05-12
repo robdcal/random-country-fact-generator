@@ -42,12 +42,11 @@ const App = () => {
             Object.keys(countryData[countryNum].currencies)[0]
           ].name
         }.`,
-        `People mostly speak ${
+        `People in ${countryName} mostly speak ${
           countryData[countryNum].languages[
             Object.keys(countryData[countryNum].languages)[0]
           ]
-        }
-      in ${countryName}.`,
+        }.`,
         `There are ${countryData[
           countryNum
         ].population.toLocaleString()} people living in ${countryName}.`,
