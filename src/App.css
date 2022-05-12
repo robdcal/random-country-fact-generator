@@ -66,23 +66,28 @@ header.hero {
 
 header.hero h1 {
   margin-bottom: 4rem;
-  text-shadow: 3px 3px 0px #828282;
+  text-shadow: 3px 3px 0px #e28e2d;
+  color: #2de28e;
 }
 
 header.hero button {
   width: fit-content;
   padding: 0.5rem 2rem;
   margin: 0 auto;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   line-height: 2rem;
   border-radius: 1rem;
   border: none;
   cursor: pointer;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+  background-color: #2de28e;
 }
 
 header.hero button:hover {
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  transform: translate(-0.05rem, -0.05rem);
+  background-color: #e28e2d;
+  color: white;
 }
 
 .fact-card {
