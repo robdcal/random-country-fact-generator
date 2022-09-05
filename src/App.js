@@ -9,6 +9,7 @@ const App = () => {
     factText: null,
   });
 
+  // get all country data from API
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
       .then((response) => response.json())
@@ -17,6 +18,7 @@ const App = () => {
       });
   }, []);
 
+  // once we have country data from the API, generate a fact
   useEffect(() => {
     if (countryData.length > 0) {
       generateFact();
@@ -27,6 +29,7 @@ const App = () => {
     generateFact();
   };
 
+  // generate a random fact from a set number of fact 'templates'
   const generateFact = () => {
     try {
       const countryNum = Math.floor(Math.random() * countryData.length);
